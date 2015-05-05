@@ -1,0 +1,25 @@
+{
+  "Waves": [
+    {
+      "Standard": 10
+    },
+    {
+      "Standard": 10,
+      "Mute": 3
+    },
+    {
+      "Standard": 5,
+      "Mute": 5,
+      "Brute": 1
+    }
+  ],
+  "VirusTypes": [
+      "Standard",
+      "Mute",
+      "Brute"
+    
+  ],
+  "Settings": {
+    "NumberOfWaves": 3
+  }
+}
