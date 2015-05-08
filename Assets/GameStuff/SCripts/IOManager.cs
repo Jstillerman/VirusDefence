@@ -8,15 +8,28 @@ public class IOManager : MonoBehaviour {
 	private static string LevelFilePath;
 
 
+
 	// Use this for initialization
 	void Start () {
 		CoinFilePath= Application.persistentDataPath + "/x11_gm.dll";
 		LevelFilePath= Application.persistentDataPath + "/win_gm.dll";
 
-	//	System.IO.File.Create (CoinFilePath).Close();
-	//	System.IO.File.Create (LevelFilePath).Close();
-		//Put coins from file into GameManager's coins
-		//	LoadCoins (System.IO.File.OpenText (CoinFilePath).ReadToEnd());
+
+		if (System.IO.File.Exists (CoinFilePath)) {
+			LoadCoins();
+		} else {
+			Debug.Log ("No coin file found, I created one at " + CoinFilePath);
+			System.IO.File.Create (CoinFilePath);
+			SetCoins(10);
+		}
+
+		if (!System.IO.File.Exists (LevelFilePath)) {
+			System.IO.File.Create (LevelFilePath);
+			Debug.Log("there was no level file, I i created it.");
+
+		}
+
+
 
 
 	
@@ -28,14 +41,17 @@ public class IOManager : MonoBehaviour {
 	}
 
 	public void SetCoins(int numCoins){
-													
-		//System.IO.File.WriteAllText(CoinFilePath, (numCoins).ToString());
+											
+		System.IO.File.WriteAllText(CoinFilePath, (numCoins).ToString());
 	}
 
 
-	void LoadCoins(string file){
+	void LoadCoins(){
+		System.IO.StreamReader temp = System.IO.File.OpenText(CoinFilePath);
+		string file = temp.ReadToEnd();
+		temp.Close ();
 			try{GetComponent<GameManagerScript>().coins = int.Parse(file);}
-			catch{SetCoins(10); LoadCoins("10");}
+			catch{SetCoins(10); LoadCoins();}
 
 			Debug.Log ("Loaded Coins: " + file);
 		

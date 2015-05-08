@@ -111,7 +111,7 @@ public class GameManagerScript : MonoBehaviour {
 	}
 
 	void CompleteLevel(){
-		//GetComponent<IOManager> ().SetCoins (coins);
+		GetComponent<IOManager> ().SetCoins (coins);
 		//GetComponent<IOManager>().setLevel(procedingLevel);
 		ReturnToMenu ();
 
@@ -132,10 +132,19 @@ public class GameManagerScript : MonoBehaviour {
 
 	void ReturnToMenu(){
 		if (canreturntomenu) {
-			AsyncOperation async = Application.LoadLevelAsync (1);
+			AsyncOperation async = Application.LoadLevelAsync (0);
 			Debug.Log (async.progress);
 			canreturntomenu = false;
 		}
+	}
+
+	void OnGUI(){
+		GUI.BeginGroup (new Rect (0, 15 ,100,100));
+		GUI.color = Color.red;
+		// Draw the background image
+		GUI.Box (new Rect (0, 15 ,100,100), "coins: " + coins);
+		GUI.EndGroup ();
+
 	}
 	
 	

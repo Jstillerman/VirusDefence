@@ -7,7 +7,7 @@ public class MenuManager : MonoBehaviour {
 	public string StoreSceneName = "";
 	// Use this for initialization
 	void Start () {
-		GameSceneName = GetComponent<IOManager> ().getCurrentLevel();
+		GameSceneName = GetComponent<IOMenuManager> ().getCurrentLevel();
 	
 	}
 	
