@@ -47,14 +47,14 @@ public class IOMenuManager : MonoBehaviour {
 		System.IO.File.WriteAllText(CoinFilePath, (numCoins).ToString());
 	}
 	
-	
-	void LoadCoins(){
+
+	public void LoadCoins(){
 		System.IO.StreamReader temp = System.IO.File.OpenText(CoinFilePath);
 		string file = temp.ReadToEnd();
 		temp.Close ();
-		//try{GetComponent<GameManagerScript>().coins = int.Parse(file);}
-		//catch{SetCoins(10); LoadCoins();}
-		
+		try{coins = int.Parse(file);}
+		catch{coins = -1;}
+
 		Debug.Log ("Loaded Coins: " + file);
 		
 	}

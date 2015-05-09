@@ -52,6 +52,7 @@
      <Compile Include="Assets\GameStuff\SCripts\CrayCrayBullet.cs" />
      <Compile Include="Assets\GameStuff\SCripts\CutScenePic.cs" />
      <Compile Include="Assets\GameStuff\SCripts\Done_BGScroller.cs" />
+     <Compile Include="Assets\GameStuff\SCripts\DontDestroyOnLoad.cs" />
      <Compile Include="Assets\GameStuff\SCripts\FaderScript.cs" />
      <Compile Include="Assets\GameStuff\SCripts\GameManagerScript.cs" />
      <Compile Include="Assets\GameStuff\SCripts\IOManager.cs" />
@@ -60,6 +61,7 @@
      <Compile Include="Assets\GameStuff\SCripts\PlayerController.cs" />
      <Compile Include="Assets\GameStuff\SCripts\RandomObjects.cs" />
      <Compile Include="Assets\GameStuff\SCripts\RotateEthan.cs" />
+     <Compile Include="Assets\GameStuff\SCripts\StoreManager.cs" />
      <Compile Include="Assets\GameStuff\SCripts\SuperClassBullet.cs" />
      <Compile Include="Assets\GameStuff\SCripts\SuperClassVirus.cs" />
      <Compile Include="Assets\GameStuff\SCripts\VirusSpawner.cs" />

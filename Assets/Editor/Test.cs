@@ -9,6 +9,11 @@ public class Test : Editor {
 		OpenScene ("Menu");
 	}
 
+	[MenuItem("Scenes/Store")]
+	public static void OpenSceneStore(){
+		OpenScene ("Store");
+	}
+
 
 	public static void OpenScene(string name){
 		if (EditorApplication.SaveCurrentSceneIfUserWantsTo ()) {
